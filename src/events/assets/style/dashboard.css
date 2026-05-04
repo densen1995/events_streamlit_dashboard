@@ -1,0 +1,44 @@
+h1 {
+    color: #1a1a2e;
+}
+
+h2, h3 {
+    color: #16213e;
+}
+
+[data-testid="metric-container"] {
+    background-color: #f8f9ff;
+    border: 1px solid #dce3f5;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e63946;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.8rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+hr {
+    margin: 8px 0;
+    border-color: #eeeeee;
+}
+
+.stLinkButton > a {
+    background-color: #e63946 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+.stLinkButton > a:hover {
+    background-color: #c1121f !important;
+}
