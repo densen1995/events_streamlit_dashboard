@@ -3,6 +3,7 @@ from events.utils.helpers import get_events_df
 from datetime import date
 import duckdb
 
+#KPI metric cards(showing diffferent counts)
 df = get_events_df()
 
 
