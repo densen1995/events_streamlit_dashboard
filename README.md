@@ -1,5 +1,5 @@
 # Stockholms Puls 🎭
-A multi-page interactive dashboard for exploring live events across Stockholm and Sweden — built with **Streamlit**, **Plotly**, **Pandas** and **DuckDB**.
+A multi-page interactive dashboard for exploring live events across Stockholm ,built with **Streamlit**, **Plotly**, **Pandas** and **DuckDB**.
 Browse concerts, theatre shows, nightlife, sports, and more. Filter by date, segment, event name, or venue. View event images, buy tickets, and locate venues on a live map.
 ---
 ## Features
