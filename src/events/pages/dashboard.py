@@ -2,7 +2,6 @@
  value counts (also in columns), and the filter section"""
 
 import streamlit as st
-import pandas as pd
 from events.utils.helpers import read_textfile, read_css, get_events_df
 from events.utils.constants import MARKDOWN_PATH, STYLE_PATH, IMAGE_PATH
 from events.components.kpis import (
@@ -16,8 +15,7 @@ from events.components.charts import (
     events_trend_line_chart,
     top_venues_chart,
     segment_pie_chart,
-    genre_pie_chart,
-    count_table_chart,
+    genre_pie_char
     event_cards,
     venue_map,
 )
@@ -25,7 +23,7 @@ from events.components.filters import date_filter, segment_filter, event_name_fi
 
 
 def dashboard_layout():
-    st.image(IMAGE_PATH /"StockholmsPuls_HeroENG.png", use_container_width=True)
+    st.image(IMAGE_PATH /"StockholmsPuls_HeroENG.png", width="stretch")
     st.markdown("# Stockholm Puls")
     st.markdown(read_textfile(MARKDOWN_PATH / "dashboard_description.md"))
 
@@ -78,6 +76,8 @@ def dashboard_layout():
         name_query = event_name_filter()
     with row2_col2:
         venue = venue_filter()
+
+
     df = get_events_df()
 
     if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
@@ -95,7 +95,7 @@ def dashboard_layout():
     if venue != "All":
         df = df[df["venue_name"] == venue]
 
-    st.markdown(f"{len(df):,} event(s) found")
+    st.markdown(f"**{len(df):,} event(s) found**")
 
     st.markdown("### Event Listings")
     event_cards(df)
@@ -104,24 +104,22 @@ def dashboard_layout():
     venue_map(df)
 
 
-Segment
-pie(full
-width)
-segment_pie_chart()
+    #Segment pie(full width)
+    segment_pie_chart()
 
-# Month line trend (full width, markers and value labels)
-events_trend_line_chart()
+    # Month line trend (full width, markers and value labels)
+    events_trend_line_chart()
 
-# Genres pie and Venues bar side by side
-col1, col2 = st.columns(2)
-with col1:
-    genre_pie_chart(8)
-with col2:
-    top_venues_chart(8)
+    # Genres pie and Venues bar side by side
+    col1, col2 = st.columns(2)
+    with col1:
+        genre_pie_chart(8)
+    with col2:
+        top_venues_chart(8)
 
-st.image(IMAGE_PATH / "StockholmsPuls_FooterENG.webp", use_container_width=True)
+    st.image(IMAGE_PATH / "StockholmsPuls_FooterENG.webp", width="stretch")
 
-read_css(STYLE_PATH / "dashboard.css")  # injects custom CSS to style the dashboard.
+    read_css(STYLE_PATH / "dashboard.css")  # injects custom CSS to style the dashboard.
 
-if name == "main":
+if __name__ == "__main__":
     dashboard_layout()
