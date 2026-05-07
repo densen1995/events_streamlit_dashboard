@@ -67,7 +67,7 @@ def add_color_legend(fig: go.Figure) -> go.Figure:
     fig.add_annotation(
         text="🟢 Highest  🔵 Middle  🔴 Lowest", #color badges from emoji picker
         xref="paper", yref="paper",
-        x=1.0, y=-0.19,
+        x=1.0, y=-0.20,
         showarrow=False,
         font=dict(size=16, color="#555"),
         align="right",
