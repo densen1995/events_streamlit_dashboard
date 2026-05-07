@@ -9,7 +9,7 @@ from events.components.charts import count_table_chart
 #loads all content into the page (title,description, images, events breakdowns)
 def home():
     st.image(IMAGE_PATH /"StockholmsPuls_HeroENG.png", width="stretch")
-    st.markdown("# Stockholm Puls")
+    st.markdown("# Stockholms Puls")
     st.markdown(read_textfile(MARKDOWN_PATH / "intro_events.md"))
 
     st.markdown("## Event Breakdowns")

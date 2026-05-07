@@ -91,7 +91,7 @@ def top_venues_chart(n: int = 8):
         title=dict(
     text=(
         "Top 8 Event Venues<br>"
-        "<span style='font-size:16px; color:gray;'>"
+        "<span style='font-size:15px; color:gray;'>"
         "Which venues host the most events?"
         "</span>"
     ),
@@ -99,8 +99,8 @@ def top_venues_chart(n: int = 8):
 ),
         xaxis_title="",
         yaxis_title="",
-        height=400,
-        margin=dict(b=100),
+        height=380,
+        margin=dict(b=10),
         xaxis= dict(title_standoff= 8),
     )
     add_color_legend(fig)
@@ -134,7 +134,7 @@ def events_trend_line_chart():
         title=dict(
     text=(
         "Monthly Events Trend (Jan – Dec, 2026)<br>"
-        "<span style='font-size:16px; color:gray;'>"
+        "<span style='font-size:15px; color:gray;'>"
         "May shows a clear peak in activity🔥"
         "</span>"
     ),
@@ -164,7 +164,7 @@ def segment_pie_chart():
         values="event_count",
         title=(
         "Event Share by Segment<br>"
-        
+        "<br>"
         "<span style='font-size:20px; color:gray;'>"
         "<sup>A few key segments dominate event participation, "
         "revealing where audience interest is strongest.</sup>"
@@ -177,7 +177,7 @@ def segment_pie_chart():
         textfont_size=12,
         pull=[0.05] * len(df_by_segment),
     )
-    fig.update_layout(height=380, margin=dict(t=60, b=40))
+    fig.update_layout(height=400, margin=dict(t=90, b=40))
     with st.container(border=True):
         st.plotly_chart(fig, width="stretch")
 
@@ -252,7 +252,7 @@ def event_cards(df_filtered: pd.DataFrame):
             st.markdown(f"**Venue:** {venue}, {city}")
             st.markdown(f"**Category:** {row['segment']} — {row['genre']}")
             st.markdown(f"**Status:** {status_badge}")
-            st.link_button("🎟️ Get Tickets / More Info", row["url"])
+            st.link_button("🎫 Get Tickets / More Info", row["url"])
 
         st.divider()
 

@@ -24,7 +24,7 @@ from events.components.filters import date_filter, segment_filter, event_name_fi
 
 def dashboard_layout():
     st.image(IMAGE_PATH /"StockholmsPuls_HeroENG.png", width="stretch")
-    st.markdown("# Stockholm Puls")
+    st.markdown("# Stockholms Puls")
     st.markdown(read_textfile(MARKDOWN_PATH / "dashboard_description.md"))
 
     st.markdown("**Event count by segment**")
