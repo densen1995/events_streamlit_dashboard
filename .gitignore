@@ -27,6 +27,6 @@ replay_pid*
 
 .env
 .venv
-*.csv
+
 __pycache__/
 *.pyc
