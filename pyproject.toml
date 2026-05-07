@@ -1,0 +1,21 @@
+[project]
+name = "events"
+version = "0.1.0"
+description = "Stockholm Events Dashboard"
+readme = "README.md"
+authors = [
+    { name = "Dennis Chinecherem", email = "densenj@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.5.2",
+    "plotly>=5.0.0",
+    "streamlit>=1.42.0",
+]
+
+[project.scripts]
+events = "events:main"
+
+[build-system]
+requires = ["uv_build>=0.9.2,<0.10.0"]
+build-backend = "uv_build"

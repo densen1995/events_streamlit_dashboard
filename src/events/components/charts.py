@@ -65,7 +65,7 @@ def bar_colors(values: pd.Series) -> list:
 
 def add_color_legend(fig: go.Figure) -> go.Figure:
     fig.add_annotation(
-        text="🟢 Highest  🔵 Middle  🔴 Lowest",
+        text="🟢 Highest  🔵 Middle  🔴 Lowest", #color badges from emoji picker
         xref="paper", yref="paper",
         x=1.0, y=-0.22,
         showarrow=False,
@@ -88,7 +88,15 @@ def top_venues_chart(n: int = 8):
         textposition="outside",
     ))
     fig.update_layout(
-        title=f"Top {n} Venues ",
+        title=dict(
+    text=(
+        "Top 8 Event Venues<br>"
+        "<span style='font-size:16px; color:gray;'>"
+        "Which venues host the most events?"
+        "</span>"
+    ),
+    x=0
+),
         xaxis_title="",
         yaxis_title="",
         height=400,
@@ -97,7 +105,7 @@ def top_venues_chart(n: int = 8):
     )
     add_color_legend(fig)
     with st.container(border=True):
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 
 # Line Charts 
@@ -123,7 +131,15 @@ def events_trend_line_chart():
         fillcolor="rgba(52,152,219,0.08)",
     ))
     fig.update_layout(
-        title="Monthly Events Trend (January – December)",
+        title=dict(
+    text=(
+        "Monthly Events Trend (Jan – Dec, 2026)<br>"
+        "<span style='font-size:16px; color:gray;'>"
+        "May shows a clear peak in activity🔥"
+        "</span>"
+    ),
+    x=0.5
+), 
         xaxis=dict(
             categoryorder="array",
             categoryarray=MONTH_ORDER,
@@ -136,7 +152,7 @@ def events_trend_line_chart():
         margin=dict(t=60, b=80),
     )
     with st.container(border=True):
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 
 # Pie Charts
@@ -146,7 +162,13 @@ def segment_pie_chart():
         df_by_segment,
         names="segment",
         values="event_count",
-        title="Event Share by Segment",
+        title=(
+        "Event Share by Segment<br>"
+        
+        "<span style='font-size:20px; color:gray;'>"
+        "<sup>A few key segments dominate event participation, "
+        "revealing where audience interest is strongest.</sup>"
+    ),
         color_discrete_sequence=px.colors.qualitative.Set2,
         hole=0.35,
     )
@@ -157,7 +179,7 @@ def segment_pie_chart():
     )
     fig.update_layout(height=380, margin=dict(t=60, b=40))
     with st.container(border=True):
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 
 def genre_pie_chart(n: int = 8):
@@ -176,14 +198,14 @@ def genre_pie_chart(n: int = 8):
     )
     fig.update_layout(height=380, margin=dict(t=60, b=40))
     with st.container(border=True):
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig,width="stretch")
 
 
 # Tables + Cards + Map 
 
 def count_table_chart(feature: str, label: str = ""):
     dff = df[feature].value_counts()
-    st.dataframe(dff, use_container_width=True)
+    st.dataframe(dff, width="stretch")
 
 
 def event_cards(df_filtered: pd.DataFrame):
@@ -199,7 +221,7 @@ def event_cards(df_filtered: pd.DataFrame):
 
         with col1:
             try:
-                st.image(row["image_url"], use_container_width=True)
+                st.image(row["image_url"], width="stretch")
             except Exception:
                 st.markdown("🎭 *Image unavailable*")
 

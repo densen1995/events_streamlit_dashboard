@@ -21,7 +21,7 @@ h2, h3 {
 
 [data-testid="stMetricLabel"] {
     font-size: 0.8rem;
-    color: #555;
+    color: #eeeeee;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
