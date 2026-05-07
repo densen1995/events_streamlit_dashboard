@@ -67,9 +67,9 @@ def add_color_legend(fig: go.Figure) -> go.Figure:
     fig.add_annotation(
         text="🟢 Highest  🔵 Middle  🔴 Lowest", #color badges from emoji picker
         xref="paper", yref="paper",
-        x=1.0, y=-0.22,
+        x=1.0, y=-0.19,
         showarrow=False,
-        font=dict(size=11, color="#555"),
+        font=dict(size=16, color="#555"),
         align="right",
     )
     return fig
@@ -77,7 +77,7 @@ def add_color_legend(fig: go.Figure) -> go.Figure:
 
 #  Bar charts
 
-def top_venues_chart(n: int = 8):
+def top_venues_chart(n: int = 7):
     dff = df_top_venues.head(n).sort_values("event_count", ascending=True)
     fig = go.Figure(go.Bar(
         x=dff["event_count"],
@@ -90,7 +90,7 @@ def top_venues_chart(n: int = 8):
     fig.update_layout(
         title=dict(
     text=(
-        "Top 8 Event Venues<br>"
+        "Top 7 Event Venues<br>"
         "<span style='font-size:15px; color:gray;'>"
         "Which venues host the most events?"
         "</span>"
@@ -177,7 +177,7 @@ def segment_pie_chart():
         textfont_size=12,
         pull=[0.05] * len(df_by_segment),
     )
-    fig.update_layout(height=400, margin=dict(t=90, b=40))
+    fig.update_layout(height=500, margin=dict(t=90, b=40))
     with st.container(border=True):
         st.plotly_chart(fig, width="stretch")
 

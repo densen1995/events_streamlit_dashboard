@@ -116,7 +116,7 @@ def dashboard_layout():
     with col1:
         genre_pie_chart(8)
     with col2:
-        top_venues_chart(8)   
+        top_venues_chart(7)   
 
     st.image(IMAGE_PATH /"StockholmsPuls_FooterENG.webp", width="stretch")
 
