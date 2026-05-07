@@ -16,12 +16,12 @@ h2, h3 {
 [data-testid="stMetricValue"] {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #e63946;
+    color: #ff6666;
 }
 
 [data-testid="stMetricLabel"] {
     font-size: 0.8rem;
-    color: #555;
+    color: #eeeeee;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -32,11 +32,11 @@ hr {
 }
 
 .stLinkButton > a {
-    background-color: #e63946 !important;
-    color: white !important;
+    background-color: #ff6666 !important;
+    color: black !important;
     border: none !important;
     border-radius: 6px !important;
-    font-weight: 600 !important;
+    font-weight: 3000 !important;
 }
 
 .stLinkButton > a:hover {

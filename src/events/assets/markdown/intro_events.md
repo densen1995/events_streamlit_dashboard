@@ -1,4 +1,4 @@
-Welcome to  **Stockholm Puls** ,your guide to discovering live experiences across Sweden's capital city.
+Welcome to  **Stockholms Puls** ,your guide to discovering live experiences across Sweden's capital city.
 
 This dataset captures events sourced from **Ticketmaster**, **Visit Stockholm**, **Fasching**, and **Berns**, spanning performances, exhibitions, concerts, sporting events, and more from 2026 through 2027.
 
