@@ -13,7 +13,7 @@ def home():
     st.markdown(read_textfile(MARKDOWN_PATH / "intro_events.md"))
 
     st.markdown("## Event Breakdowns")
-    features = ("status", "weekday", "source", "segment")
+    features = ("status", "day_of _week", "source", "segment")
     cols = st.columns(len(features))
     for col, feature in zip(cols, features):
         with col:
