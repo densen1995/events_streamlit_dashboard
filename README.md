@@ -61,12 +61,7 @@ streamlit_test_dennis/
 - **Python 3.12 or newer**
 - **uv** — a fast Python package and project manager
        
-Install `uv` if you do not have it yet:
 
-    
-```bash  
-
-```
 
 ---
 
