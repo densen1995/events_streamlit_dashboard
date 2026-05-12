@@ -103,20 +103,7 @@ def dashboard_layout():
 
     st.markdown("###  Map")
     venue_map(df)
-
-        
-    # Segment pie (full width)
-    segment_pie_chart()
-
-     # Month line trend (full width, markers and value labels)
-    events_trend_line_chart()
-
-    # Genres pie and Venues bar side by side
-    col1, col2 = st.columns(2)
-    with col1:
-        genre_pie_chart(8)
-    with col2:
-        top_venues_chart(7)   
+   
 
     st.image(IMAGE_PATH /"StockholmsPuls_FooterENG.webp", width="stretch")
 
