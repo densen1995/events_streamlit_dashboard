@@ -23,8 +23,11 @@
 hs_err_pid*
 replay_pid*
 
-.devcontainer
-.idea
+#Dev container
+.devcontainer/
+.vscode/
+
+.idea/
 .env
 .venv
 
